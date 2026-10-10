@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -44,6 +45,11 @@ fun GreetingPreview() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
+    Row (modifier) {
+        TextCell ("1")
+        TextCell ("2")
+        TextCell ("3")
+    }
 
 }
 
