@@ -5,9 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -46,31 +48,18 @@ fun GreetingPreview() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Column (modifier) {
-        Row(modifier) {
-            Column (modifier) {
-                TextCell("1")
-                TextCell("2")
-                TextCell("3")
-            }
-            Column (modifier) {
-                TextCell("4")
-                TextCell("5")
-                TextCell("6")
-            }
-            Column (modifier) {
-                TextCell("7")
-                TextCell("8")
-            }
-        }
-        Row (modifier) {
-            TextCell("9")
-            TextCell("10")
-            TextCell("11")
-        }
+    Row (horizontalArrangement = Arrangement.End, modifier = modifier.size(width = 400.dp, height = 200.dp)) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
     }
 
-}
+    Column (verticalArrangement = Arrangement.Bottom, modifier = modifier.height(400.dp)) {
+        TextCell("4")
+        TextCell("5")
+        TextCell("6")
+    }
+   }
 
 @Composable
 fun TextCell(text:String, modifier: Modifier=Modifier){
